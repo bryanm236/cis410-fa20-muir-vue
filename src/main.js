@@ -4,13 +4,15 @@ import axios from 'axios'
 
 
 
-
+import store from './store.js'
 import router from './routes.js'
 
 axios.defaults.baseURL = "https://cis410-fa20-muir-api.azurewebsites.net/"
 
+
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })
