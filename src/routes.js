@@ -18,7 +18,7 @@ const routes = [
     {path: '/account', component: Account},
     {path: '/signin', component: Login},
     {path: '/drivers', component: Drivers},
-    {path: '/drivers/:pk', component: DriverDetail,
+    {path: '/DriverT/:pk', component: DriverDetail,
                 children: [
                     {path: 'ride', component: RideCreate}
                 ]},

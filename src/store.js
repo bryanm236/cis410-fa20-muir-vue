@@ -11,7 +11,7 @@ export default new Vuex.Store({
 
     },
     mutations:{
-        storeToeknInApp(state, myToken){
+        storeTokenInApp(state, myToken){
             state.token = myToken
         },
         storeUserInApp(state, myUser){
