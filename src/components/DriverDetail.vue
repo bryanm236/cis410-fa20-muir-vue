@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Driver Detail</h1>
+        <h1>Driver Information</h1>
     </div>
 </template>
 
