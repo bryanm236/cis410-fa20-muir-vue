@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import routes from './routes.js';
 
 Vue.use(Vuex);
 
@@ -20,7 +21,12 @@ export default new Vuex.Store({
         },
         storeDrivers(state, myDrivers){
             state.drivers = myDrivers
+        },
+        clearAuthData(state){
+            state.token = null;
+            state.user = null;
         }
+
 
     },
     actions:{
@@ -31,6 +37,17 @@ export default new Vuex.Store({
                 commit('storeDrivers', myResponse.data)
             })
             .catch(()=>{console.log("error in getDrivers action")})
+        },
+        logout({commit, state}){
+            axios.post('/customers/logout',null,{
+                headers:{
+                    Authorization: `Bearer ${state.token}`
+                }
+            });
+
+            commit(`clearAuthData`)
+
+            routes.replace("/");
         }
 
     }
