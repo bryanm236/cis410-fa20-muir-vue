@@ -2,7 +2,7 @@
   <div id="app">
   <div class="container-fluid">
     <app-header></app-header>
-    <h4>Rides App</h4>
+    <p class="font-weight-light">The most innovative transportation app that prioritizes our client's experience</p>
     <div class="row justify-content-center">
       <div class = "col-md-10 col-lg-7">
     <router-view></router-view>

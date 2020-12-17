@@ -8,14 +8,16 @@
         <p v-if="accountError" class="form-text text-danger">Cannot get your account information, please try again later.</p>
         <table v-if="ridesByUser" class ="table">
             <thead>
-                <th>Location To</th>
-                <th>Location From</th>
+                <th></th>
+                <th class="text-primary font-weight-bold">Location To</th>
+                <th class="text-primary font-weight-bold">Location From</th>
                 
             </thead>
 
                 <tbody>
                     <tr v-for="thisRide in ridesByUser" :key="thisRide.RidePK">
-                        <th><router-link :to="`/DriverT/${thisRide.DriverFK}`">{{thisRide.LocationTo}}</router-link></th>
+                        <th></th>
+                        <th>{{thisRide.LocationTo}}</th>
                         <th>{{thisRide.LocationFrom}}</th>
                         
                     </tr>
@@ -55,6 +57,7 @@ export default {
         })
     }
 }
+
 </script>
 
 <style scoped>

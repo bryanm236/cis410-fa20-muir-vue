@@ -10,13 +10,16 @@
             </div>
         </div>
 
-        <router-link v-if="auth" :to="` /drivers/${this.$route.params.pk}/ride`">
+        <router-link v-if="auth" :to="`${this.$route.params.pk}/ride`">
             <button type="button" class="btn btn-success">Take a Ride in {{driver.FirstName}}'s {{driver.VehicleType}}</button>
         </router-link>
 
         <router-link v-else :to="`/signin`">
             <button type="button" class="btn btn-outline-success">Sign in to Take a Ride in {{driver.FirstName}}'s {{driver.VehicleType}}!</button>
         </router-link>
+        <br/>
+        <br/>
+        <router-view></router-view>
 
     </div>
 </template>
