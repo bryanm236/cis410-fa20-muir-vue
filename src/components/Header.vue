@@ -1,19 +1,12 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link class="navbar-brand" to="/">RidesRUS</router-link>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="true"
-      aria-label="Toggle navigation"
-    >
+    <router-link class="navbar-brand" to='/'>Rides</router-link>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse show" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
+        
         <li class="nav-item">
           <router-link class="nav-link" to="/drivers">Drivers</router-link>
         </li>
@@ -35,26 +28,32 @@
         </li>
 
         <li class="nav-item" v-if="auth">
-          <button @click="onLogout" class="btn btn-warning">Log Out</button>
+          
+            <button @click="onLogout" class="btn btn-warning">Log Out</button>
+          
         </li>
+        
       </ul>
     </div>
-  </nav>
+  
+</nav>
 </template>
+
 
 <script>
 export default {
-  computed: {
-    auth() {
-      return this.$store.state.token;
-    }
+  computed:{
+    auth(){return this.$store.state.token}
   },
-  methods: {
-    onLogout() {
-      this.$store.dispatch("logout");
+  methods:{
+    onLogout(){
+      this.$store.dispatch("logout")
     }
   }
-};
+    
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
